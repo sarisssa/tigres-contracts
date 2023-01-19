@@ -53,7 +53,6 @@ contract TigresPool is Initializable, ERC20Upgradeable, OwnableUpgradeable, UUPS
                 ? (token0, token1, reserve0, reserve1)
                 : (token1, token0, reserve1, reserve0);
 
-        // tokenIn.approve(address(this), _amountIn);
         tokenIn.transferFrom(msg.sender, address(this), _amountIn);
 
         uint256 amountInWithFee = (_amountIn * 997) / 1000;
